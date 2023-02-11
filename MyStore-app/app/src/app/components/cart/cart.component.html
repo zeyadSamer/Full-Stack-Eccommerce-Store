@@ -1,0 +1,88 @@
+
+<app-header></app-header>
+
+
+<div class="empty-cart-message"  *ngIf="!cartItems.length">
+
+    <h1>Your Cart is Empty</h1>
+ 
+    <a routerLink="/products">Go Back To Shopping </a>
+    
+</div>
+
+
+<div class="cart-container" *ngIf="cartItems.length">
+
+
+
+
+    <div class="cart-panel">
+
+        <div *ngFor="let item of cartItems" class="cart-item">
+            <div *ngIf="item">
+                <img src={{item.image}} alt="">
+            </div>
+            <div class="cart-item-details" *ngIf="item">
+
+          
+                
+                <div>
+                    <h4>{{item.title}}</h4>
+                    <h4>{{item.price}}</h4>
+                    <label>Amount: </label>
+                   
+                    <input class="number-input"  [(ngModel)]="item.quantity" (ngModelChange)="getTotalPrice()" value={{item.quantity}} type="number"  min="1" />
+                    <svg style="color:red" (click)="removeProductFromCart(item.id,item.title)"
+                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                      </svg>
+                    
+
+                </div>
+
+ 
+
+
+
+            </div>
+            
+
+
+        </div>
+
+        <h1 >Total:${{totalPrice}}</h1>
+
+
+
+    </div>
+    
+
+
+    <form  #form="ngForm" class="form-margin"  >
+        <h2>Full Name *</h2>
+        <input type="text" required minlength="3" #username="ngModel" [(ngModel)]="user.name" name="username" placeholder="(min 3 charachters)">
+        <div style="color:red ;" *ngIf="username.invalid && username.dirty"> min of 3 characters username must be provided</div>
+                  <h2>Address *</h2>
+        <input type="text" #address="ngModel" required minlength="6"  [(ngModel)]="user.address" name="address" placeholder="(min 6 charachters)">
+        <div style="color:red ;" *ngIf="address.invalid && address.dirty"> min of 6 characters address must be provided</div>
+        <h2>Credit card number *</h2>
+
+        <input pattern="[0-9]*" type="text" required minlength="16" maxlength="16" #creditCard="ngModel" [(ngModel)]="user.creditCardNumber" name="credit-card" placeholder="(16-digit number)">
+        <div style="color:red ;" *ngIf="!creditCard.errors?.['pattern'] && creditCard.invalid && creditCard.dirty"> 16 digit credit card number must be provided</div>
+   
+        <div style="color:red ;" *ngIf="creditCard.errors?.['pattern']"> Only numbers should be provided</div>
+   
+
+
+        <h5>we will never share your payment details with anyone</h5>
+         
+        <input (click)="submitOrder()" type="button" [disabled]="form.invalid"  value="Submit" class="btn btn-primary">
+    
+
+
+    </form>
+
+
+
+</div>

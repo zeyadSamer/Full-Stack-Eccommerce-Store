@@ -1,0 +1,22 @@
+
+<header>
+    
+    <div class="user">
+    <h4>{{getSignedInUser()}}</h4>
+    </div>
+
+    <div>
+<h1>MyStore</h1>
+
+<a routerLink='/products'>Product List </a>|
+<a routerLink='/cart'>Product Cart</a>
+<i class="fa-solid fa-cart-shopping"> </i>
+ <span   class="badge bg-danger">{{getCartSize()}}</span>
+
+</div>
+
+<div class="logout">
+<button  (click)="logout()"> logout</button>
+</div>
+
+</header>

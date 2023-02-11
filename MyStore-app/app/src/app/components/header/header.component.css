@@ -1,0 +1,46 @@
+header{
+
+    background: #33B5E5;
+    padding:12px;
+    text-align:center;
+
+    color:#FFF;
+    padding:12px;
+
+    display: flex;
+    justify-content: space-between;
+    
+
+
+}
+
+a{
+    color:#FFFFFF;
+    text-decoration:none;
+
+}
+
+span{
+
+    
+    font-size:8px;
+    position:relative;
+    top:-5px
+
+    
+}
+
+
+.logout button{
+
+    border-radius: 16px;
+    height: 30px;
+    width: 150px;
+    background-color: transparent;
+    color:#FFFFFF;
+    border-color:transparent;
+    
+
+
+
+}

@@ -1,0 +1,76 @@
+<div class="parent">
+
+    <form class="container" (ngSubmit)="handleUserSigning()">
+        
+
+    <div class="sign-title">
+        <h1>{{getTitle()}}</h1>
+        <p *ngIf="!isSigningIn">Please fill in this form to create an account!</p>
+    
+    </div>    
+
+
+
+
+
+    <div class="data-container"> 
+        
+    
+
+        <div *ngIf="!isSigningIn" class="input-box">
+             <input style="width: 46%;" type="text"placeholder="First Name" [(ngModel)]="registeringUser.firstName" name="firstName" (ngModelChange)="printInfo()" required>
+        
+            <input style="width: 46%;" type="text" placeholder="Last Name"  [(ngModel)]="registeringUser.lastName" name="lastName"    required>
+        
+        </div>
+       
+    <div class="input-box">
+        <input type="email" placeholder="Email" [(ngModel)]="registeringUser.email" name="email" required>
+        
+
+    </div>
+
+
+
+
+    <div class="input-box">
+        <input type="text" placeholder="Password" [(ngModel)]="registeringUser.password" name="password" required>
+        
+
+
+    </div>
+    <div *ngIf="!isSigningIn" class="input-box">
+        <input type="text" placeholder="Phone number" [(ngModel)]="registeringUser.phone1" name="phone1" required>
+
+    </div>
+
+    <div *ngIf="!isSigningIn" class="input-box">
+        <input type="text" placeholder="Phone number 2"  [(ngModel)]="registeringUser.phone2" name="phone2">
+
+    </div>
+
+
+
+
+<div *ngIf="!isSigningIn" class="terms">
+    <input  type="checkbox">
+    I accept the <span> Terms of Use </span> & <span > Privacy Policy</span>
+   
+
+</div>
+
+
+<div *ngIf="!isSigningIn"  (click)="toggleSigningIn()" onclick=> Already have an account? SignIn</div>
+<div *ngIf="isSigningIn" (click)="toggleSigningIn()">Don't have an account? SignUp</div>
+
+</div>
+   
+
+<input type="submit" class="submit" value={{getTitle()}} />
+
+    
+    
+</form>
+
+
+</div>

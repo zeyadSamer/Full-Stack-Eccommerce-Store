@@ -1,0 +1,35 @@
+/* .product-index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1024px;
+    margin-bottom: 64px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+  } */
+
+
+  .container{
+    display:flex;
+    justify-content: center;
+   
+    align-items:center;
+  }
+
+
+  .products{
+  
+    display:flex;
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+   
+    max-width: 1024px;
+    margin-bottom: 64px;
+
+
+
+
+  }

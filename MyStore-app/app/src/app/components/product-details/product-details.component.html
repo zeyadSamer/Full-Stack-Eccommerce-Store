@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="detail-container">
+    <div>
+        <img src={{showedProduct.image}}   alt="">
+    </div>
+
+
+
+    <div class="detail-item">
+
+       
+ 
+    <h1 >{{showedProduct.title}}</h1>
+    <h3>${{showedProduct.price}}</h3>
+    <h3>{{showedProduct.description}}</h3>
+ 
+    
+   
+    <select class="select-input" name="quantity"  [(ngModel)]="productQuantity" >
+        <option   *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]" value={{i}} >{{i}}</option>
+    </select>
+    <br>
+    
+    <button (click)="addProductToCart()" type="button" class="btn btn-primary">Add to cart</button>
+    <br>
+
+    <div class="back-link">
+    <a  routerLink="/">Back to product list</a>
+    </div> 
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>

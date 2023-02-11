@@ -1,0 +1,40 @@
+.container{
+
+
+    margin:auto ;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    margin-top:8%
+
+
+
+
+
+
+}
+
+.items{
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+
+    
+}
+
+a{
+    text-decoration: none;
+    color:white;
+}
+
+span{
+    
+    font-weight:bold;
+}
+
+h1{
+    color: #33e5bc;
+    font-size:40px;
+    font-weight:500;
+}

@@ -1,0 +1,33 @@
+
+.product{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin-top:64px;
+   
+    max-width:300px
+}
+
+.product img{
+    width:250px;
+    border: 1px solid #33B5E5;
+    padding:20px;
+    margin:6px 6px;
+    height:300px;
+
+
+}
+
+
+
+select{
+    
+
+    width: 108px; 
+    margin-bottom: 8px;
+}
+h6{
+    word-wrap:break-word;
+    text-align: center;
+}
